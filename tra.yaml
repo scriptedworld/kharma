@@ -1,0 +1,28 @@
+---
+
+project: &id001
+  :table_name: project
+  :required_attributes:
+  - name
+  :optional_attributes: []
+  :allowed_subtypes:
+  - runs
+run: &id002
+  :table_name: run
+  :required_attributes:
+  - project_id
+  - description
+  :optional_attributes: []
+  :allowed_subtypes:
+  - results
+result: &id003
+  :table_name: result
+  :required_attributes:
+  - run_id
+  - test_case
+  - status
+  :optional_attributes: []
+  :allowed_subtypes: []
+projects: *id001
+runs: *id002
+results: *id003
